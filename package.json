@@ -1,0 +1,38 @@
+{
+  "name": "blendet-products",
+  "version": "1.0.0",
+  "description": "This repository contains starter files for blended practical lessons. It provides a ready-to-use project structure so students can focus on learning and exercises without extra setup.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Larimar4you/blendet-products.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Larimar4you/blendet-products/issues"
+  },
+  "homepage": "https://github.com/Larimar4you/blendet-products#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "globals": "^17.6.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.2.0",
+    "mongoose": "^9.6.3",
+    "nodemon": "^3.1.14",
+    "pino-http": "^11.0.0",
+    "pino-pretty": "^13.1.3"
+  }
+}
