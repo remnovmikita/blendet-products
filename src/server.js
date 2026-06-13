@@ -6,7 +6,8 @@ import helmet from 'helmet';
 import logger from './middlewares/logger.js';
 import 'dotenv/config';
 import { connectMongoDB } from './db/connectMongoDB.js';
-import productsRoutes from '../routes/productRoutes.js';
+import productsRoutes from './routes/productRoutes.js';
+import { errors } from 'celebrate';
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(productsRoutes);
 
 app.use(notFoundHandler);
 
+app.use(errors());
 app.use(errorHandler);
 
 await connectMongoDB();

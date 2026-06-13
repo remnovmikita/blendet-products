@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { CATEGORIES } from "../constanst/categories.js";
 
 const productShema = new Schema({
   name:{
@@ -12,7 +13,7 @@ const productShema = new Schema({
   },
   category:{
     type: String,
-    enum: ['books', 'electronics', 'clothing', 'other'],
+    enum: CATEGORIES,
     default: "other",
   },
   description:{
@@ -23,4 +24,4 @@ const productShema = new Schema({
   versionKey:false,
 });
 
-export const Product = model('Product',productShema);
+export const Product = model('Product', productShema);
