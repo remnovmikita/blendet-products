@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import {
   createProduct,
-  deleteProducr,
+  deleteProduct,
   getAllProducts,
   getProductById,
   updateProduct,
@@ -13,8 +13,11 @@ import {
   productIdParamsShema,
   updateProductsShema,
 } from '../validation/productsValidation.js';
+import { authenticate } from '../middlewares/authenticate.js';
 
 const router = Router();
+
+router.use("/products", authenticate);
 
 router.get('/products', celebrate(getProductsShema), getAllProducts);
 router.get(
@@ -26,7 +29,7 @@ router.post('/products', celebrate(createProductsShema), createProduct);
 router.delete(
   '/products/:productId',
   celebrate(productIdParamsShema),
-  deleteProducr,
+  deleteProduct,
 );
 router.patch(
   '/products/:productId',
